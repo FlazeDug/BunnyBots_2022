@@ -68,7 +68,7 @@ public final class NeoSteerControllerFactoryBuilder {
             RevUtils.checkNeoError(motor.setPeriodicFramePeriod(CANSparkMaxLowLevel.PeriodicFrame.kStatus0, 100), "Failed to set periodic status frame 0 rate");
             RevUtils.checkNeoError(motor.setPeriodicFramePeriod(CANSparkMaxLowLevel.PeriodicFrame.kStatus1, 20), "Failed to set periodic status frame 1 rate");
             RevUtils.checkNeoError(motor.setPeriodicFramePeriod(CANSparkMaxLowLevel.PeriodicFrame.kStatus2, 20), "Failed to set periodic status frame 2 rate");
-            RevUtils.checkNeoError(motor.setIdleMode(CANSparkMax.IdleMode.kBrake), "Failed to set NEO idle mode");
+            RevUtils.checkNeoError(motor.setIdleMode(CANSparkMax.IdleMode.kCoast), "Failed to set NEO idle mode"); // orig kbrake
             motor.setInverted(!moduleConfiguration.isSteerInverted());
             if (hasVoltageCompensation()) {
                 RevUtils.checkNeoError(motor.enableVoltageCompensation(nominalVoltage), "Failed to enable voltage compensation");
